@@ -1,0 +1,74 @@
+# Project Overview
+
+This repository is derived from a larger VR-based consumer behavior study.
+The original project includes a full Unity VR environment, headset data
+collection, behavioral feature extraction, and downstream analysis.
+
+This GitHub repository focuses on documenting and demonstrating
+the **data processing and analysis pipeline**, rather than the VR application itself.
+
+## Original Project Components
+
+### VR Environment
+- Implemented in Unity
+- Full VR experience packaged as:
+  `Food_U2022-2-6f1-Jiaxin_20Jan2024`
+- Used for collecting behavioral and eye-tracking data
+- The Unity project is not included in this repository
+
+### Raw Data Sources
+- Headset and controller data (position, rotation, distance)
+- Eye-tracking data
+- Interaction and behavior logs
+- Participant metadata and experimental conditions
+
+## Data Organization (Original Project)
+
+- `overall_otherdata/`  
+  Contains behavioral data collected from headset and controllers
+
+- `overall_eyetracking/`  
+  Contains raw eye-tracking data from participants
+
+## Data Processing & Analysis Pipeline
+
+### Feature Extraction
+- `core_function.py`  
+  Core functions for extracting eye-tracking features
+
+- `child_function.py`  
+  Helper functions supporting core feature extraction logic
+
+- `headset_data.py`  
+  Behavioral feature calculation based on headset and controller data  
+  (e.g. rotation, distance, movement features)
+
+### Data Integration
+- `analysis.py`  
+  Main script for extracting eye-tracking features and exporting
+  analysis-ready CSV files
+
+- `main_df.py`  
+  Integrates behavioral and eye-tracking features into a unified table
+
+### Outputs
+- `eyetracking_df.csv`  
+  Eye-tracking feature table
+
+- `eye_beh_choice_FN_df.csv`  
+  Combined dataset including:
+  - Behavioral features
+  - Eye-tracking features
+  - Food neophobia levels
+  - Participant food choices
+
+### Downstream Analysis
+- `machine_learning.py`  
+  Machine learning training based on extracted features
+
+- `FN_statistics.py`  
+  Statistical analysis and visualization of food neophobia levels
+
+## Notes
+All data shown in this repository is either synthetic, anonymized,
+or described at a conceptual level.
