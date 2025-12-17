@@ -1,39 +1,50 @@
 # VR Behavior Data Pipeline
 
-This repository presents a simplified data processing workflow designed for VR-based behavioral experiments.
+This repository presents a simplified data processing workflow designed for VR-based behavioral experiments, with a focus on behavioral feature engineering and reproducible data logic.
 
 ## Background
-The project is inspired by my work on VR consumer behavior research, where participant sessions included multiple data sources such as eye-tracking logs, interaction events, and session metadata collected separately.
+The project is inspired by my work on VR consumer behavior research, where participant sessions included multiple data sources such as eye-tracking logs, interaction events, and session metadata collected separately.  
+A single session often required reconstructing timelines and deriving interpretable behavioral features from raw sensor data.
 
 ## What I did
-- Designed a structured data schema for multi-source VR experiment data
-- Built Python-based logic to reconstruct participant timelines
-- Validated and cleaned behavioral logs for analysis readiness
-- Focused on reproducible and transparent data workflows
+- Designed modular Python functions for VR behavioral feature extraction
+- Implemented angular kinematics (velocity and acceleration) from rotation data
+- Built logic to detect and merge stationary (pause) intervals based on motion thresholds
+- Emphasized clear data assumptions, reproducibility, and readable data pipelines
 
 ## Skills & Technologies
-- Python
-- Behavioral & eye-tracking data
-- Data validation & preprocessing
-- Research-oriented data workflows
+- Python  
+- Behavioral and eye-tracking data  
+- Feature engineering  
+- Data validation and preprocessing  
+- Research-oriented data workflows  
 
 ## Notes
-This repository focuses on data logic and workflow design. The original VR environments and raw study data are not included.
+This repository focuses on data logic and workflow design.  
+The original VR environments and raw study data are not included.  
+Data schemas and metadata handling are illustrated directly in the code through documented input assumptions and synthetic examples.
 
-## Quick Start (Reading Order)
-1. Start with `docs/project_overview.md` for context
-2. Check `docs/data_schema.md` to understand data and metadata structure
-3. Explore `scripts/` for example processing logic
+## Quick Start
+Run the example scripts to explore the feature extraction pipeline:
 
-## Repository Contents
-- `docs/project_overview.md`  
-  Overview of the original VR experiment and full data pipeline
+python scripts/demo_behavior_features.py  
+python scripts/demo_stop_detection.py  
 
-- `docs/data_schema.md`  
-  Data sources, metadata fields, and schema used in the VR study (anonymized / illustrative examples)
+## Core Modules
+src/vr_behavior/kinematics.py  
+Compute angular velocity and angular acceleration from VR rotation data.
 
-- `scripts/`  
-  Example Python scripts demonstrating key data processing logic
+src/vr_behavior/stop_detection.py  
+Detect and merge stationary (pause) intervals based on motion thresholds.
 
-- `examples/`  
-  Example outputs and visualizations
+## Repository Structure
+docs/  
+- project_overview.md — overview of the original VR experiment and pipeline context  
+
+src/vr_behavior/  
+- kinematics.py — core kinematic feature extraction  
+- stop_detection.py — stationary interval detection logic  
+
+scripts/  
+- demo_behavior_features.py — runnable example for kinematic features  
+- demo_stop_detection.py — example pipeline for stop detection  
