@@ -25,5 +25,8 @@ out = compute_angular_kinematics(df)
 
 print(out[["velocity_rota", "acceleration_rota"]].head())
 
+print(out[["velocity_rota", "acceleration_rota"]].describe())
+
+
 
 
