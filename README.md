@@ -5,7 +5,7 @@ This repository presents a simplified data processing workflow designed for VR-b
 ## Background
 The project is inspired by my work on VR consumer behavior research, where participant sessions included multiple data sources such as eye-tracking logs, interaction events, and session metadata collected separately.  
 A single session often required reconstructing timelines and deriving interpretable behavioral features from raw sensor data.
-<video src="github.com" controls width="600"></video>
+<video src="https://github.com/Sandoich/VR-behavior-data-pipeline/releases/download/v1.0_demo_video/demo_first_person.mp4" controls width="600"></video>
 
 ## What I did
 - Designed modular Python functions for VR behavioral feature extraction
